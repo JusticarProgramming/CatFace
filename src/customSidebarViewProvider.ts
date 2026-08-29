@@ -55,17 +55,26 @@ export class CustomSidebarViewProvider implements vscode.WebviewViewProvider {
     if (numProblems === 0) {
         imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "0errors.png")).toString();
         message = "you make the cat very happy!";
-    } else if (numProblems >= 1 && numProblems < 3) {
+    } else if (numProblems === 1) {
+        imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "1error.jpg")).toString();
+        message = "just one... the cat can handle it";
+    } else if (numProblems >= 2 && numProblems < 4) {
         imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "3errors.png")).toString();
         message = "(uh oh)";
-    } else if (numProblems >= 3 && numProblems < 6) {
+    } else if (numProblems >= 4 && numProblems < 6) {
         imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "6errors.png")).toString();
         message = "eughh what's that...";
-    } else if (numProblems >= 6 && numProblems < 10) {
+    } else if (numProblems >= 6 && numProblems < 8) {
+        imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "skeptic.webp")).toString();
+        message = "the cat is judging your code";
+    } else if (numProblems >= 8 && numProblems < 10) {
+        imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "scared.webp")).toString();
+        message = "the cat is scared for you";
+    } else if (numProblems >= 10 && numProblems < 15) {
         imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "10errors.png")).toString();
         message = "dude look at what you've done-";
     } else {
-        imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "10errors.png")).toString();
+        imageUrl = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "shocked.jpg")).toString();
         message = "uhm hello friend, just letting you know, there's code in your bugs";
     }
 
